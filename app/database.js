@@ -2,9 +2,9 @@ const Sequelize = require('sequelize')
 
 var db = {}
 
-const sequelize = new Sequelize('graphql-mysql-tutorial', 'graphql', '123456', {
+const sequelize = new Sequelize('compras_db', 'user_dev', 'azsxdc', {
     host: 'localhost',
-    port: '8006',
+    port: '3306',
     dialect: 'mysql',
     define: {
         freezeTableName: true,
@@ -20,9 +20,9 @@ const sequelize = new Sequelize('graphql-mysql-tutorial', 'graphql', '123456', {
 })
 
 let models = [
-    require('./models/priorities.js'),
-    require('./models/status.js'),
-    require('./models/tickets.js'),
+    require('./models/evento_usuario.js'),
+    require('./models/pedido.js'),
+    require('./models/evento.js'),
     require('./models/users.js'),
 ]
 

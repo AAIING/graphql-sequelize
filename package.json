@@ -4,25 +4,25 @@
     "description": "",
     "main": "app.js",
     "scripts": {
-        "start": "npm-run-all --parallel build:watch run:watch",
+        "start": "npm-run-all --parallel build:watch run:watch babel-node app/app.js",
         "test": "echo \"Error: no test specified\" && exit 1",
         "build": "webpack",
         "build:watch": "webpack --watch",
         "run": "node ./dist/app.js",
+        "babel-node": "babel-node app/app.js",
+        "babel-version": "babel --version",
         "run:watch": "nodemon ./dist/app.js"
     },
     "author": "Dirk H. Wolthuis",
     "license": "ISC",
     "dependencies": {
-        "@babel/core": "^7.3.4",
-        "@babel/polyfill": "^7.2.5",
-        "@babel/preset-env": "^7.3.4",
+        "@babel/polyfill": "^7.8.3",
         "apollo-server-express": "^2.7.0",
-        "babel-loader": "^8.0.5",
         "body-parser": "^1.18.3",
         "cors": "^2.8.5",
         "express": "^4.16.4",
         "graphql": "^14.3.1",
+        "graphql-tools": "^4.0.7",
         "mysql2": "^1.6.5",
         "nodemon": "^1.18.10",
         "npm-run-all": "^4.1.5",
@@ -30,6 +30,10 @@
         "webpack-cli": "^3.2.3"
     },
     "devDependencies": {
+        "@babel/cli": "^7.8.4",
+        "@babel/core": "^7.8.6",
+        "@babel/node": "^7.8.4",
+        "@babel/preset-env": "^7.8.6",
         "webpack": "^4.29.4",
         "webpack-node-externals": "^1.7.2"
     }

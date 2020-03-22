@@ -8,15 +8,20 @@ export const typeDefs = gql`
     }
 
     type User {
-        id: ID!
+        id_usuario: ID!
+        nombre: String
+        apellido: String
+        telefono: String
         email: String
-        name: String
+        rol_usuario: String
     }
 `
 
 export const resolvers = {
     Query: {
-        users: async () => db.users.findAll(),
-        user: async (obj, args, context, info) => db.users.findByPk(args.id),
+        users: async () => db.usuario.findAll(),
+        user: async (obj, args, context, info) => db.usuario.findByPk(args.id),
     },
 }
+
+
